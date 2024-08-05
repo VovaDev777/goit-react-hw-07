@@ -3,9 +3,14 @@ import SearchBox from '../SearchBox/SearchBox'
 import ContactList from "../ContactList/ContactList";
 import css from './App.module.css'
 import '../../reset.css'
+import { useEffect } from "react";
 
 
 const App = () => {
+
+  useEffect(() => {
+    
+  }, [])
 
   return (
     <div className={css.container}>
