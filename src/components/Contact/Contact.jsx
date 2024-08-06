@@ -2,7 +2,7 @@ import css from './Contact.module.css'
 import { AiOutlineUser, AiFillPhone } from "react-icons/ai";
 import 'normalize.css';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contactsSlice';
+// import { deleteContact } from '../../redux/contactsSlice';
 
 const Contact = ({ contact }) => {
 
