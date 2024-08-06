@@ -1,11 +1,12 @@
 import { Formik, Form, Field } from 'formik';
 import css from "./ContactForm.module.css";
 import * as Yup from "yup";
-
+import {useDispatch} from "react-redux"
+import {addContact} from '../../redux/contactsOps.js'
 
 
 const UserSchema = Yup.object().shape({
-    username: Yup.string()
+    name: Yup.string()
         .min(3, 'Your name is too Short!')
         .max(50, 'Your name is too Long!')
         .required('This field is required'),
@@ -16,17 +17,21 @@ const UserSchema = Yup.object().shape({
 });
 
 const ContactFrom = () => {
+    const dispatch = useDispatch();
 
-  
+  const handleSubmit = (values, actions) => {
+    dispatch(addContact(values))
+    actions.resetForm();
+  }
 
     return (
         <>
             <Formik
                 initialValues={{
-                    username: "",
+                    name: "",
                     number: "",
                 }}
-                onSubmit={0}
+                onSubmit={handleSubmit}
                 validationSchema={UserSchema}
             >
                 <Form>
@@ -34,7 +39,7 @@ const ContactFrom = () => {
                         <div className={css.formList}>
                             <div className={css.formItem}>
                                 <label className={css.label}>Name</label>
-                                <Field type="text" name="username" className={css.input} />
+                                <Field type="text" name="name" className={css.input} />
                             </div>
                             <div className={css.formItem}>
                                 <label className={css.label}>Number</label>

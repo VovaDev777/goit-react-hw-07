@@ -12,6 +12,7 @@ const ContactList = () => {
   // const filteredContacts = contacts.filter(contact =>
   //   contact.username.toLowerCase().includes(filter.toLowerCase())
   // );
+  console.log(contacts);
  
   return (
     <div className={css.container}>
