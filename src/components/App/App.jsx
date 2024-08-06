@@ -7,12 +7,12 @@ import css from './App.module.css'
 import '../../reset.css'
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contactsOps";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 
 const App = () => {
   const dispatch = useDispatch();
-
+  const loading = useSelector(state => state.contacts.loading);
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch])
@@ -22,7 +22,7 @@ const App = () => {
       <h1 className={css.text}>Phonebook</h1>
       <ContactForm />
       <SearchBox />
-      <Loader />
+      {loading && <Loader />}
       <ContactList />
     </div>
   )
