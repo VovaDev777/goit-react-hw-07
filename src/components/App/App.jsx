@@ -12,8 +12,8 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    
-  }, [])
+    dispatch(fetchContacts());
+  }, [dispatch])
 
   return (
     <div className={css.container}>
