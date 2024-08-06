@@ -1,9 +1,14 @@
-
+import { useDispatch } from 'react-redux';
 import css from './SearchBox.module.css'
+import { setFilter } from '../../redux/filtersSlice';
 
 const SearchBox = () => {
 
-  
+  const dispatch = useDispatch();
+
+  const handleSearchChange = (event) => {
+    dispatch(setFilter(event.target.value));
+  }
 
   return (
     <form className={css.form}>
@@ -12,7 +17,7 @@ const SearchBox = () => {
         type="text"
         className={css.input}
         // value={filter}
-        // onChange={handleSearchChange}
+        onChange={handleSearchChange}
       />
     </form>
   )

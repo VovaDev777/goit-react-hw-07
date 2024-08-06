@@ -1,8 +1,8 @@
 import { Formik, Form, Field } from 'formik';
 import css from "./ContactForm.module.css";
 import * as Yup from "yup";
-import {useDispatch} from "react-redux"
-import {addContact} from '../../redux/contactsOps.js'
+import { useDispatch } from "react-redux"
+import { addContact } from '../../redux/contactsOps.js'
 
 
 const UserSchema = Yup.object().shape({
@@ -19,10 +19,10 @@ const UserSchema = Yup.object().shape({
 const ContactFrom = () => {
     const dispatch = useDispatch();
 
-  const handleSubmit = (values, actions) => {
-    dispatch(addContact(values))
-    actions.resetForm();
-  }
+    const handleSubmit = (values, actions) => {
+        dispatch(addContact(values))
+        actions.resetForm();
+    }
 
     return (
         <>
