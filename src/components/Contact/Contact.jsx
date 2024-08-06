@@ -16,7 +16,7 @@ const handleDelete = (id) => {
       <ul className={css.list}>
         <li className={css.listItem}>
           <AiOutlineUser className={css.svgIcon} />
-          <p className={css.text}>{contact.username}</p>
+          <p className={css.text}>{contact.name}</p>
         </li>
         <li className={css.listItem}>
           <AiFillPhone className={css.svgIcon} />
