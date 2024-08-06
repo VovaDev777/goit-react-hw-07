@@ -4,9 +4,12 @@ import ContactList from "../ContactList/ContactList";
 import css from './App.module.css'
 import '../../reset.css'
 import { useEffect } from "react";
+import { fetchContacts } from "../../redux/contactsOps";
+import { useDispatch } from "react-redux";
 
 
 const App = () => {
+  const dispatch = useDispatch();
 
   useEffect(() => {
     
